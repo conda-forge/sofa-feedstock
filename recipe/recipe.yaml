@@ -196,5 +196,6 @@ about:
 extra:
   feedstock_name: sofa
   recipe-maintainers:
+    - bakpaul
     - olivier-roussel
     - hugtalbot
