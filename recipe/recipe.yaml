@@ -1,7 +1,6 @@
 context:
   name: sofa
   version: "25.06.00"
-  build_num: 0
 
 recipe:
   name: ${{ name }}
@@ -13,14 +12,14 @@ source:
 
   patches:
       # https://github.com/sofa-framework/sofa/pull/5664
-      - patches/0001-GUI-Fix-compilation-with-clang-and-boost-1.89-5664.patch
+    - patches/0001-GUI-Fix-compilation-with-clang-and-boost-1.89-5664.patch
       # https://github.com/sofa-framework/sofa/pull/5665
-      - patches/0002-Framework-Fix-compilation-with-clang20-5665.patch
+    - patches/0002-Framework-Fix-compilation-with-clang20-5665.patch
       # https://github.com/sofa-framework/sofa/pull/5775
-      - patches/0003-use-find-or-fetch-mechanism-for-nlohmann-json.patch
+    - patches/0003-use-find-or-fetch-mechanism-for-nlohmann-json.patch
 
 build:
-  number: ${{ build_num }}
+  number: 1
 
 outputs:
   - package:
@@ -61,8 +60,7 @@ outputs:
             - Sofa.Core*
     about:
       summary: Runtime librairies for the SOFA framework
-      description: Runtime librairies for SOFA, a real-time multi-physics
-       simulator with an emphasis on medical simulation and robotics.
+      description: Runtime librairies for SOFA, a real-time multi-physics simulator with an emphasis on medical simulation and robotics.
       license: LGPL-2.1-or-later
       license_file:
         - LICENSE-LGPL.md
@@ -116,7 +114,7 @@ outputs:
           include:
             - Sofa.Core/sofa/core/init.h
       - script:
-        - cmake-package-check Sofa.Core
+          - cmake-package-check Sofa.Core
         requirements:
           run:
             - cmake-package-check
@@ -124,8 +122,7 @@ outputs:
             - ${{ compiler('cxx') }}
     about:
       summary: Development librairies for the SOFA framework
-      description: Development librairies for SOFA, a real-time multi-physics
-       simulator with an emphasis on medical simulation and robotics.
+      description: Development librairies for SOFA, a real-time multi-physics simulator with an emphasis on medical simulation and robotics.
       license: LGPL-2.1-or-later
       license_file:
         - LICENSE-LGPL.md
@@ -143,7 +140,7 @@ outputs:
         - cmake
         - if: unix
           then: make
-        - if: win 
+        - if: win
           then: ninja
       host:
         - ${{ pin_subpackage('sofa-devel', exact=True) }}
@@ -171,16 +168,15 @@ outputs:
           lib:
             - Sofa.GL*
       - script:
-        - cmake-package-check Sofa.GL
+          - cmake-package-check Sofa.GL
         requirements:
           run:
             - cmake-package-check
             - ${{ compiler('c') }}
-            - ${{ compiler('cxx') }}            
+            - ${{ compiler('cxx') }}
     about:
       summary: SOFA GL rendering library
-      description: GL rendering library for SOFA, a real-time multi-physics
-       simulator with an emphasis on medical simulation and robotics.
+      description: GL rendering library for SOFA, a real-time multi-physics simulator with an emphasis on medical simulation and robotics.
       license: LGPL-2.1-or-later
       license_file:
         - LICENSE-LGPL.md
