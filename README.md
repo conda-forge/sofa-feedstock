@@ -218,6 +218,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bakpaul](https://github.com/bakpaul/)
 * [@hugtalbot](https://github.com/hugtalbot/)
 * [@olivier-roussel](https://github.com/olivier-roussel/)
 
