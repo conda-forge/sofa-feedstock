@@ -97,6 +97,7 @@ outputs:
         - gtest
         - nlohmann_json
         - tight-inclusion
+        - eigen-abi-devel
       run:
         - libboost-headers
         - eigen
