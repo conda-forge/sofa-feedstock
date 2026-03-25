@@ -11,7 +11,7 @@ source:
   sha256: 79ad3da07cdb968744344a987a75759a193df7473bceebd94fd5eef49485ed83
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -45,6 +45,7 @@ outputs:
         - gtest
         - nlohmann_json
         - tight-inclusion
+        - eigen-abi-devel
       run_exports:
         - ${{ pin_subpackage('libsofa', upper_bound='x.x.x') }}
     tests:
@@ -96,13 +97,16 @@ outputs:
         - gtest
         - nlohmann_json
         - tight-inclusion
+        - eigen-abi-devel
       run:
         - libboost-headers
         - eigen
         - cxxopts
         - zlib
+        - eigen-abi-devel
         - ${{ pin_subpackage('libsofa', exact=True) }}
       run_exports:
+        - ${{ pin_compatible('eigen-abi', upper_bound='x.x.x.x') }}        
         - ${{ pin_subpackage('libsofa', upper_bound='x.x.x') }}
     tests:
       - package_contents:
@@ -140,6 +144,7 @@ outputs:
       host:
         - ${{ pin_subpackage('sofa-devel', exact=True) }}
         - eigen
+        - eigen-abi-devel
         - glew
         - libboost-headers
         - if: linux
