@@ -21,7 +21,7 @@ eigen_abi_devel:
 glew:
 - '2.3'
 libboost_headers:
-- '1.88'
+- '1.90'
 target_platform:
 - linux-ppc64le
 tinyxml2:
