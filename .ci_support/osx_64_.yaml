@@ -23,7 +23,7 @@ eigen_abi_devel:
 glew:
 - '2.3'
 libboost_headers:
-- '1.88'
+- '1.90'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
